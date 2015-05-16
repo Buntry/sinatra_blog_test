@@ -1,15 +1,53 @@
+<DOCTYPE html>
 <html>
-<head>
- <title><%= title %></title>
-</head>
-<body>
- <ul>
-   <li><a href="/">Home</a></li>
-   <li><a href="/posts/create">New Post</a></li>
- </ul>
- <% if flash[:error] %>
- <p class="alert alert-error"><%= flash[:error] %>
-<% end %>
- <%= yield %>
-</body>
+	<head>
+		
+		<!-- Calls title from app.rb -->
+		<title><%= title %></title>
+		
+		<!-- Standard Meta Build -->
+		<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+       	<meta name="viewport" content="width=device-width, initial-scale=1">
+       	<meta name="description" content="a site i made using the sinatra framework/rubygem ">
+       	<meta name="author" content="Parker Griep">
+		
+		<!--Bootstrap CSS-->
+		<link href="/css/bootstrap.min.css" rel="stylesheet">
+		<!--Custom Fonts-->
+		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700' rel='stylesheet' type='text/css'>
+		<!--Custom CSS-->
+		<link href="/css/style.css" rel="stylesheet">
+		
+		
+	</head>
+	<body>
+		
+		<div class="wrapper">
+			<nav>
+				<ul id="navigation">
+					<li>
+						<a href="/">Home</a>
+					</li>
+					<li>
+						<a href="/posts/create">New Post</a>
+					</li>
+				</ul>
+			</nav>
+
+			<hr id="main-hr">
+
+			<% if flash[:error] %>
+				<p class="alert alert-error"><%= flash[:error] %>
+			<% end %>
+
+			<%= yield %>
+			<div class='push'></div>
+		</div>
+		
+		<footer class="footer">
+			<h4>Made by Parker Griep</h4>
+			<h5>For Mr. Larocca's AP Computer Science Class</h5>
+		</footer>
+	</body>
 </html>

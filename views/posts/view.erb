@@ -1,2 +1,7 @@
-<h1><%= @post.title %></h1>
-<p><%= @post.body %></p>
+<h1 id="post-view-title" class="post-view">
+	<%=h @post.title %>
+</h1>
+
+<p id="post-view-body" class="post-view">
+	<%=h @post.body %>
+</p>

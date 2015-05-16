@@ -10,6 +10,8 @@ require 'sinatra/redirect_with_flash'
 
 enable :sessions
 
+# Post Controller
+
 get "/" do
   @posts = Post.order("created_at DESC")
   @title = "Welcome"
@@ -37,6 +39,8 @@ get "/posts/:id" do
  @title = @post.title
  erb :"posts/view"
 end
+
+# Helpers
 
 helpers do
   def title
