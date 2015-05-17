@@ -1,0 +1,11 @@
+<div id="comment-index">
+	<h3>Comments:</h3>
+	<% @post.comments.each do |comment| %>
+		<div class="comment-view">
+			<hr>
+			<p class="comment-view-body"><%= comment.body %></p>
+			<p class="comment-time">Created: <%= comment.created_at %></p>
+		</div>
+	<% end %>
+	
+</div>

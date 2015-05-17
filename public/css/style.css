@@ -62,4 +62,35 @@ footer h5{
 }
 #post-view-body {
 	font-size: 16px;
+	padding-bottom: 20px;
+}
+
+#comment-creater {
+	padding-left: 3%;
+	padding-right: 3%;
+}
+
+#make-comment {
+	padding: 3%;
+	padding-bottom: 0px;
+	padding-top: 0px;
+	
+	font-size: 18px;
+}
+
+#footer-weight {
+	height: 30px
+}
+
+#comment-index {
+	padding-left: 3%;
+	padding-right: 3%;
+}
+
+.comment-time {
+	margin
+}
+
+.comment-view {
+	font-size: 15px;
 }

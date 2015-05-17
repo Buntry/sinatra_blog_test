@@ -1,0 +1,14 @@
+<div id="comment-creater">
+	<h3>Create Comment</h3>
+	
+		<form action="/posts/<%= @post.id %> " method="post"role="form">
+		
+	 	<div class="form-group">
+	   		<label for="comment_body">Comment Body:</label><br>
+	   		<textarea id="comment_body" name="comment[body]" class="form-control" rows="5"></textarea>
+			<input type="hidden" name="comment[post_id]" class="form-control" value="<%= @post.id %>">
+	 	</div>
+	 	<button type="submit" class="btn btn-success">Submit</button>
+		
+	</form>
+</div>

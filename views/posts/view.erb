@@ -5,3 +5,11 @@
 <p id="post-view-body" class="post-view">
 	<%=h @post.body %>
 </p>
+
+<h3 id="make-comment"><a href="/posts/<%= @post.id %>/comments/create">Make a Comment</a></h3>
+
+<% if @comment %>
+	<%= erb :'comments/create' %>
+<% end %> 
+
+<%= erb :'comments/index' %>
