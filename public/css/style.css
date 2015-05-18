@@ -94,3 +94,22 @@ footer h5{
 .comment-view {
 	font-size: 15px;
 }
+
+#post-edit-wrapper {
+	padding: 3%;
+	padding-top: 0px;
+}
+
+.edit-links a {
+	display: inline;
+	padding-right: 20px;
+}
+
+#post-delete-wrapper {
+	padding: 3%;
+	padding-top: 0px;
+}
+
+#view-edit-links {
+	padding-left: 3%;
+}

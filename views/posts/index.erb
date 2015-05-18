@@ -2,7 +2,11 @@
 <% @posts.each do |post| %>
  <li>
    <h4><a href="/posts/<%= post.id %>"><%= post.title %></a></h4>
-   <p>Created: <%= post.created_at %></p>
+   <p>Created: <%=h post.created_at %></p>
+   <div class="edit-links">
+	<a href="/posts/<%= post.id %>/edit">Edit</a>
+	<a href="/posts/<%= post.id %>/destroy">Destroy</a>
+   </div>
  </li>
  <hr>
 <% end %>

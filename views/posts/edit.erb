@@ -1,9 +1,10 @@
-<div id="post-create-wrapper">
-	<h2>Create Post</h2>
+<div id="post-edit-wrapper">
+	<h2>Edit Post</h2>
 	
 	<br/>
 	
-	<form action="/posts" method="post" role="form">
+	<form action="/posts/<%= @post.id %>" method="post" role="form">
+		<input type="hidden" name="_method" value="put">
 		
 		<div class="form-group">
 	   		<label for="post_title">Title:</label><br>

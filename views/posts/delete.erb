@@ -1,0 +1,11 @@
+<div id="post-delete-wrapper">
+	<h2>Delete Post</h2>
+	
+	<br/>
+	
+	<form action="/posts/<%= @post.id %>" method="post" role="form">
+		<input type="hidden" name="_method" value="delete">
+	 	<button type="submit" class="btn btn-success" id="delete-button">Delete Post!</button>
+	</form>
+	
+</div>

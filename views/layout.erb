@@ -38,7 +38,7 @@
 			<hr id="main-hr">
 
 			<% if flash[:error] %>
-				<p class="alert alert-error"><%= flash[:error] %>
+				<p class="alert alert-error"><%=h flash[:error] %>
 			<% end %>
 
 			<%= yield %>

@@ -1,4 +1,4 @@
-# app.rb
+# app.rb < Sinatra::Application
 
 require 'sinatra'
 require 'sinatra/activerecord'
@@ -13,6 +13,7 @@ enable :sessions
 
 # Post Controller
 
+ #index posts
 get "/" do
   @posts = Post.order("created_at DESC")
   @title = "Welcome"
@@ -23,7 +24,8 @@ end
 get "/posts" do
   redirect "/"
 end
-
+  
+ #create posts
 get "/posts/create" do
  @title = "Create post"
  @post = Post.new
@@ -38,13 +40,47 @@ post "/posts" do
    redirect "posts/create", :error => 'Something went wrong, try writing the post again!'
  end
 end
-
+ 
+  #view post
 get "/posts/:id" do
  @post = Post.find(params[:id])
  @title = @post.title
 	
  erb :"posts/view"
 end
+
+  #edit posts
+get "/posts/:id/edit" do
+ @post = Post.find(params[:id])
+ @title = "Edit post"
+ 
+ erb :"posts/edit"
+end
+
+put "/posts/:id" do
+ @post = Post.find(params[:id])
+ @post.update(params[:post])
+
+ redirect "/posts/#{@post.id}"	
+end
+  
+ #delete post
+get "/posts/:id/destroy" do
+ @post = Post.find(params[:id])
+	
+ erb :"posts/delete"
+end
+
+delete "/posts/:id" do
+ @post = Post.find(params[:id])
+ @post.comments.each do |comment|
+	 comment.destroy
+ end
+ @post.destroy
+ 
+ redirect "/"
+end
+
 
 #Comment Controller
 
