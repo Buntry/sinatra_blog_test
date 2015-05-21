@@ -1,6 +1,6 @@
 development:
   adapter: postgresql
-  database: development
+  database: production
   username: <%= ENV['griepp'] %>
   password: <%= ENV['password'] %>
   host: 127.0.0.1
